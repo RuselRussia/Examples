@@ -1,0 +1,44 @@
+$x('//div[contains(@class, "b-sidebar")]') - поиск div с классли b-sidebar
+
+$x('//a[@style]') - поиск a с атрибутом style
+
+$x('//a[@href="/rubrics/russia/"]') - поиск a с атрибутом href=/rubrics/russia/
+
+$x('/html/body') - /*/*/ - точный путь
+
+$x('//body') - //body - ищет все body на пути
+
+$x('//ul[contains(@class, "b-sidebar-menu__list")]//a[@href="/rubrics/world/"][ text()="Мир" ]/text()') - 
+найти любой ul, который содержит класс b-sidebar-menu__list, в ul найти любой a, у которого href=/rubrics/world/, а также атрибут text="Мир", вытащить текст
+	
+$x("//h1/following-sibling::p") - находит для любых попавшихся h1 текст в теге p(во всех последующих p)
+
+$x("//h1/following-sibling::p[1]") - находит для любых попавшихся h1 текст в теге p(в первых p)
+
+<time datetime="2019-01-24T10:23:51Z">Сегодня 13:23</time>
+$x('//time/@datetime') - ищется значение атрибут datetime в контейнере time 
+
+
+-----------------------------------------------------------------------------------------------------------
+
+pubdate = parse_date(sel.css('.article-detail > .date').xpath('./text()').extract_first()) - вытащить текст сразу после класса
+<div class="date">
+          28 января 2019, 09:16
+          
+            
+              <div class="tags-subject">
+                <span>
+                  
+                    <a href="/tag/venesuela/">Венесуэла</a>
+                  
+                    <a href="/tag/donald-tramp/">Дональд Трамп</a>
+                  
+                    <a href="/tag/oppoziciya/">оппозиция</a>
+                  
+                    <a href="/tag/usa/">США</a>
+                  
+                </span>
+              </div>
+            
+          
+        </div>
